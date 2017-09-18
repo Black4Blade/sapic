@@ -74,7 +74,7 @@
                       <div class="profile_header_badge">
                         <div class="favorite_badge">
                           <div class="favorite_badge_icon" data-community-tooltip="You are a perfect lolicon!<br>
-    Level 5 Mayjasmine episode01 What is God? 五月茉莉 Badge">
+                                                    Level 5 Mayjasmine episode01 What is God? 五月茉莉 Badge">
                             <a class="whiteLink" href="https://steamcommunity.com/id/wolfenstian/gamecards/417110">
                               <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/417110/eb3ebf7b6f1ca9302fb8dd6595fd178572c90c8d.png" class="badge_icon small">
                             </a>
@@ -187,25 +187,25 @@
                       </div>
                       <div class="profile_count_link_preview">
                         <div class="profile_badges_badge " data-community-tooltip="Game Mechanic<br>
-    355 games owned">
+                                                    355 games owned">
                           <a href="https://steamcommunity.com/id/wolfenstian/badges/13">
                             <img src="https://steamcommunity-a.akamaihd.net/public/images/badges/13_gamecollector/250_54.png?v=4" class="badge_icon small">
                           </a>
                         </div>
                         <div class="profile_badges_badge " data-community-tooltip="Years of Service<br>
-    Member since 13 August, 2010.">
+                                                    Member since 13 August, 2010.">
                           <a href="https://steamcommunity.com/id/wolfenstian/badges/1">
                             <img src="https://steamcommunity-a.akamaihd.net/public/images/badges/02_years/steamyears702_54.png" class="badge_icon small">
                           </a>
                         </div>
                         <div class="profile_badges_badge " data-community-tooltip="Sticker Completionist<br>
-    Collected and placed every sticker in the 2017 Steam Summer Sale.">
+                                                    Collected and placed every sticker in the 2017 Steam Summer Sale.">
                           <a href="https://steamcommunity.com/id/wolfenstian/badges/26">
                             <img src="https://steamcommunity-a.akamaihd.net/public/images/badges/26_summer2017_sticker/completionist.png" class="badge_icon small">
                           </a>
                         </div>
                         <div class="profile_badges_badge last" data-community-tooltip="Level 1<br>
-    Level 1 Sweet fantasy Badge">
+                                                    Level 1 Sweet fantasy Badge">
                           <a href="https://steamcommunity.com/id/wolfenstian/gamecards/612110">
                             <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/612110/197378569fe289ba15fdbd2521cdee6f5bfcf63b.png" class="badge_icon small">
                           </a>
@@ -445,7 +445,8 @@
                       <div class="screenshot_showcase">
                         <div class="screenshot_showcase_primary showcase_slot ">
                           <a class="screenshot_showcase_screenshot modalContentLink" href="https://steamcommunity.com/sharedfiles/filedetails/?id=368116037">
-                            <img width="100%" style="max-width: 506px;" :src="$store.state.background">
+                            <div class="profile_main_artbox" :style="{ backgroundImage: `url('${$store.state.background}')` }"> </div>
+                            <!-- <img width="100%" style="max-width: 506px;" :src="$store.state.background"> -->
                           </a>
                           <div class="screenshot_showcase_itemname">
                             Glitch </div>
@@ -461,7 +462,8 @@
                         <div class="screenshot_showcase_rightcol">
                           <div class="screenshot_showcase_smallscreenshot showcase_slot ">
                             <a class="screenshot_showcase_screenshot modalContentLink" href="https://steamcommunity.com/sharedfiles/filedetails/?id=756373801">
-                              <img width="100%" style="max-width: 100px;" :src="$store.state.background">
+                              <div class="profile_main_artbox_side1" :style="{ backgroundImage: `url('${$store.state.background}')` }"> </div>
+                              <!-- <img width="100%" style="max-width: 100px;" :src="$store.state.background"> -->
                             </a>
                           </div>
                           <a class="screenshot_showcase_smallscreenshot screenshot_count" href="https://steamcommunity.com/id/wolfenstian/images/">
@@ -484,19 +486,36 @@
 
       </div>
     </div>
-    <!-- responsive_page_content -->
+
+    <div class="bgPreloader" style="display: none" v-for="background in nextBackgrounds" v-bind:key="background.url">
+      <img :src="background.steamUrl">
+    </div>
 
   </div>
 </template>
 
 <script>
 export default {
-
+  computed: {
+    nextBackgrounds() {
+      return this.$store.state.nextRandomBackgrounds
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
+.profile_main_artbox {
+  width: 100%;
+  height: 850px;
+  background-position: -508px -271px;
+}
 
+.profile_main_artbox_side1 {
+  width: 100%;
+  height: 850px;
+  background-position: -1022px -271px;
+}
 </style>
 
 <style scoped src="~/assets/css/buttons.css"></style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="top-container">
     TopBar
   </div>
 </template>
@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.top-container {
   width: 100%;
-  background: #666;
-  height: 100px
+  height: 100px;
+  border-bottom: 6px solid red;
 }
 </style>

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 import LegacyIndex from '~/components/LegacyIndex.vue'
 import LeftMenu from '~/components/LeftMenu.vue'
 import TopBar from '~/components/TopBar.vue'
@@ -28,6 +29,11 @@ export default {
     return {
       title: 'Users'
     }
+  },
+
+  async fetch ({ store, params }) {
+    let { data } = await axios.get('https://steam.design/bg.json')
+    store.commit('setBackgrounds', data)
   }
 }
 </script>
@@ -53,3 +59,9 @@ export default {
   margin: 10px 0;
 }
 </style>
+<style>
+body {
+background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+}
+</style>
+

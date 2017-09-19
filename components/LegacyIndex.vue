@@ -1,5 +1,5 @@
 <template>
-  <div class="responsive_page_frame with_header">
+  <div class="responsive_page_frame with_header main-container">
     <div class="responsive_header">
       <div class="responsive_header_content">
         <div id="responsive_menu_logo">
@@ -515,6 +515,10 @@ export default {
   width: 100%;
   height: 850px;
   background-position: -1022px -271px;
+}
+
+.main-container { 
+  flex: 0 1 auto;
 }
 </style>
 

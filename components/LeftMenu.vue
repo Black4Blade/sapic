@@ -18,6 +18,8 @@ export default {
 .menu-container {
   border-right: 2px solid #999;
   height: 100vh;
+  background: rgba(46, 43, 55, 0.3);
+  box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
 }
 
 .btn {

@@ -19,6 +19,7 @@
     "nuxt": "^1.0.0-rc3",
     "source-map-support": "^0.4.15",
     "store": "^2.0.12",
+    "vue-virtual-scroller": "^0.9.0",
     "vuex": "^2.4.0"
   },
   "devDependencies": {

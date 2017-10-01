@@ -1,13 +1,12 @@
 <template>
   <div class="container">
     <div class="left-menu-container">
-      <left-menu />
+      <left-menu>
+      </left-menu>
     </div>
     <div class="backgrounds-container">
       <top-bar />
-      <div class="preview-container">
-        <legacy-index class="zoom_out" />
-      </div>
+
       <backrounds-list />
     </div>
   </div>
@@ -36,7 +35,7 @@ export default {
 
   async fetch ({ store, params }) {
     let { data } = await axios.get('https://steam.design/bg.json')
-    store.commit('setBackgrounds', data)
+    store.commit('setBackgrounds', data.slice(0, 100))
   }
 }
 </script>
@@ -49,17 +48,10 @@ export default {
   overflow: hidden;
 }
 
-.preview-container {
-  height: 33vh;
-  width: 100%;
-  overflow: hidden;
-  box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
-}
-
 .left-menu-container {
-  min-width: 150px;
-  max-width: 250px;
-  width: 20vw;
+  min-width: 415px;
+  max-width: 650px;
+  width: 40vw;
 }
 
 .backgrounds-container {
@@ -79,13 +71,6 @@ export default {
 
 .user {
   margin: 10px 0;
-}
-
-.zoom_out {
-  transform: scale(.25);
-  transform-origin: 0 0;
-  margin: 0;
-  width: 400%;
 }
 </style>
 <style>

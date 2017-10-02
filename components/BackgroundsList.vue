@@ -3,7 +3,7 @@
   <v-container fluid grid-list-md>
     <v-layout row wrap>
       <v-flex xs6 md4 v-for="bg in $store.state.backgrounds" v-bind:key="bg.url">
-        <v-card>
+        <v-card @click="setBackground(bg.steamUrl)" class="backgroundCard">
           <v-card-media :src="bg.steamUrl" height="200px">
           </v-card-media>
           <v-card-title primary-title>
@@ -37,5 +37,9 @@ export default {
 
 .primary-title {
   font-size: 20px;
+}
+
+.backgroundCard {
+  cursor: pointer;
 }
 </style>

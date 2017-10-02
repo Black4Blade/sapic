@@ -1,11 +1,21 @@
 <template>
   <v-card>
-    <div class="menu-container">
-      <button class="btn" @click="randomBackground">Random bg</button>
-
-      <div class="preview-container">
-        <legacy-index class="zoom_out" />
+    <div class='menu-container'>
+      <div class='preview-container'>
+        <legacy-index class='zoom_out' />
       </div>
+
+      <v-container>
+        <v-layout row wrap>
+          <v-flex xs6>
+            <v-btn light @click='randomBackground'>Random BG</v-btn>
+          </v-flex>
+          <v-flex xs6>
+            <v-btn light @click='downloadZip'>Get ZIP</v-btn>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
     </div>
   </v-card>
 </template>
@@ -20,6 +30,20 @@ export default {
   methods: {
     randomBackground () {
       this.$store.commit('randomBackground')
+    },
+    downloadZip () {
+      let bgSaveInfo = {
+        url: this.$store.state.background,
+        images: [
+          { name: 'Artwork_Middle.png', 'x': 508, 'y': 298, 'w': 506, 'h': 2000 },
+          { name: 'Artwork_Right_Top.png', 'x': 1022, 'y': 298, 'w': 100, 'h': 2000 },
+          { name: 'Avatar.png', 'x': 499, 'y': 34, 'w': 164, 'h': 164 }
+        ]
+      }
+
+      let url = 'https://steam.design/raw/' + btoa(JSON.stringify(bgSaveInfo))
+      console.log('url:', url)
+      window.open(url, '_blank')
     }
   }
 }
@@ -33,7 +57,7 @@ export default {
   box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
 }
 
-.btn {
+/* .btn {
   border-radius: 5px;
   font-family: Arial;
   color: #000000;
@@ -61,7 +85,7 @@ export default {
 .btn:active {
   background: white;
   user-select: none;
-}
+} */
 
 .zoom_out {
   transform: scale(.25);

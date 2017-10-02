@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <v-navigation-drawer></v-navigation-drawer>
     <main>
       <v-container fluid>
         <nuxt/>

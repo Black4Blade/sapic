@@ -16,12 +16,21 @@ const createStore = () => {
         state.nextRandomBackgrounds.push(state.backgrounds[Math.floor(state.backgrounds.length * Math.random())])
       },
       randomBackground (state) {
+        if(state.nextRandomBackgrounds.length < 1) {
+          sleep(100);
+        }
         state.background = state.nextRandomBackgrounds.shift().steamUrl
         while (state.nextRandomBackgrounds.length < 3) {
           state.nextRandomBackgrounds.push(state.backgrounds[Math.floor(state.backgrounds.length * Math.random())])
         }
       }
     }
+  })
+}
+
+function sleep(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms)
   })
 }
 

@@ -386,6 +386,7 @@ body.profile_page.flat_page #footer_spacer {
 .profile_leftcol {
 	width: 636px;
 	float: left;
+	box-sizing: initial;
 }
 
 .profile_rightcol {

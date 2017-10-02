@@ -1,11 +1,13 @@
 <template>
-  <div class="menu-container">
-    <button class="btn" @click="randomBackground">Random bg</button>
+  <v-card>
+    <div class="menu-container">
+      <button class="btn" @click="randomBackground">Random bg</button>
 
-    <div class="preview-container">
-      <legacy-index class="zoom_out" />
+      <div class="preview-container">
+        <legacy-index class="zoom_out" />
+      </div>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -26,7 +28,7 @@ export default {
 <style scoped>
 .menu-container {
   border-right: 2px solid #999;
-  height: 100vh;
+  height: 90vh;
   background: rgba(46, 43, 55, 0.3);
   box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
 }

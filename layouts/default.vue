@@ -1,19 +1,19 @@
 <template>
-  <div>
-    <nuxt/>
-    <my-footer/>
-  </div>
+  <v-app>
+    <v-navigation-drawer></v-navigation-drawer>
+    <main>
+      <v-container fluid>
+        <nuxt/>
+      </v-container>
+    </main>
+  </v-app>
 </template>
 
 <script>
-import MyFooter from '~/components/Footer.vue'
-
 export default {
-  components: {
-    MyFooter
-  }
 }
 </script>
 
 <style>
+@import url('~vuetify/dist/vuetify.min.css');
 </style>

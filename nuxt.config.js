@@ -21,7 +21,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'vuetify'],
     /*
     ** Run ESLINT on save
     */
@@ -35,5 +35,9 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  plugins: [
+    { src: '~/plugins/vuetify.js' }
+  ]
 }

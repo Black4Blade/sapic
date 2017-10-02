@@ -138,11 +138,6 @@
                     <div class="profile_summary_footer" style="display: none;">
                       <span class="whiteLink">View more info</span>
                     </div>
-                    <script type="text/javascript">
-                    $J(function() {
-                      InitProfileSummary(g_rgProfileData['summary']);
-                    });
-                    </script>
                   </div>
 
                 </div>
@@ -519,6 +514,10 @@ export default {
 
 .main-container { 
   flex: 0 1 auto;
+}
+
+div {
+  box-sizing: content-box;
 }
 </style>
 

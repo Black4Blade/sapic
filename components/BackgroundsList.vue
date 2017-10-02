@@ -33,6 +33,7 @@ export default {
 .mainCard {
   height: 90vh !important;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .primary-title {
